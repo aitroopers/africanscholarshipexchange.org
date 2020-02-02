@@ -1,0 +1,29 @@
+{% load static %}
+
+<section class="blog_area section_padding_0_70 page-template-default page page-id-906 page-parent right-sidebar woocommerce-active wv-canvas"
+        id="students">
+
+    <div class="container">
+        <ul class="products wvecomm-products-list">
+            {% for s in students %}
+            <li class="post-788 product type-product status-publish has-post-thumbnail product_cat-animals first instock virtual purchasable product-type-simple">
+                <a href="?student={{ s.id }}"
+                   class="woocommerce-LoopProduct-link woocommerce-loop-product__link zoom-hover__outer">
+                    <div class="c-ribbon__wrapper c-badge__wrapper  ">
+                        <picture class="img-responsive zoom-hover__inner">
+                            <img class="img-responsive img-thumbnail"
+                                 src="{% url 'home' %}{{ s.profile_image }}"
+                                 >
+                        </picture>
+                    </div>
+                    <h3 class="woocommerce-loop-product__title">{{ s }} | {{ s.country  }}</h3> </a>
+
+               <span class="price"><span class="ywcnp_suggest_label"> <span
+                        class="woocommerce-Price-amount amount"><span
+                        class="woocommerce-Price-currencySymbol"></span>Degree : {{ s.degree }}</span></span></span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</section>

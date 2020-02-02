@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+    {% include 'breadcumb_section.html' %}
+
+    <section class="welcome_area section_padding_0_70 page-template-default page page-id-906 page-parent right-sidebar woocommerce-active wv-canvas jarallax" id="student" style="background-color: #f7f7f7">
+
+    <main id="main" class="site-main" role="main">
+        <br>
+        <h1 class="text-capitalize" style="text-align: center; color:#7a0b09"> {{ tag_line }}</h1>
+        <br>
+        <div id="product-1097" class="post-1097 product type-product status-publish has-post-thumbnail product_cat-health first instock shipping-taxable purchasable product-type-variable has-children">
+            <div class="container">
+                <div class="product-summary wvecomm_product_image_summary">
+
+                    <h1 class="product-summary__title product_title entry-title" data-product-info-title="Bed Nets" data-product-info-product-id="1097" data-product-info-item-id="D4041777" data-product-info-category="Health" data-o_content="Bed Nets">{{ student }}</h1>
+                    <div class="product-summary__image wvecomm_product_image">
+
+                        <div class="image__wrapper">
+                            <div class="c-ribbon__wrapper">
+                                <figure>
+                                    <img class="img-thumbnail" width="600" height="599" src="{% url 'home' %}{{ student.profile_image }}" srcset="{% url 'home' %}{{ student.profile_image }}" sizes="(max-width: 600px) 100vw, 600px"></figure>
+                                <div class="product_ribbon">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- .wvecomm_product_image -->
+
+                    <div class="product-summary__details wvecomm_product_summary">
+
+                        <p class="price"><span class="woocommerce-Price-amount amount"><span
+                                    class="woocommerce-Price-currencySymbol">$</span>10</span>–<span class="woocommerce-Price-amount amount"><span
+                                    class="woocommerce-Price-currencySymbol">$</span>{{ student.funding_goal }}</span>
+                        </p>
+
+                        {% include 'students/student_form.html' %}
+
+
+                    </div>
+                    <!-- .wvecomm_product_summary -->
+
+                </div>
+                <!-- .wvecomm_product_image_summary -->
+            </div>
+
+        </div>
+        <!-- #product-1097 -->
+
+    </main>
+
+</section>
+
+
+{% include 'home/about_section.html' %}
+
+
+    {% include 'home/why_choose_section.html' %}
+
+
+
+    {% include 'home/what_we_do_section.html' %}
+
+
+{% endblock %}

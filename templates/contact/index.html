@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% include 'breadcumb_section.html' %}
+
+    <section class="message_now_area bg-gray section_padding_100_70" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="message_title">
+                    <div class="section_heading">
+                        <h3>Message Now</h3>
+                    </div>
+                </div>
+                <div class="contact_from">
+
+                    <form  method="post" id="main_contact_form">
+                        {% csrf_token %}
+                        <!-- Message Input Area Start -->
+                        <div class="contact_input_area">
+                            <div id="success_fail_info"></div>
+                            <div class="row">
+                                <!-- Single Input Area Start -->
+                                <div class="col-12 col-md-6">
+
+                                    <div class="form-group">
+                                        {{ form.name.errors }}
+                                        {{ form.name }}
+                                    </div>
+                                </div>
+                                <!-- Single Input Area Start -->
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        {{ form.email.errors }}
+                                        {{ form.email }}
+                                    </div>
+                                </div>
+                                <!-- Single Input Area Start -->
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        {{ form.subject.errors }}
+                                        {{ form.subject }}
+                                    </div>
+                                </div>
+                                <!-- Single Input Area Start -->
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group">
+                                        {{ form.number.errors }}
+                                        {{ form.number }}
+                                    </div>
+                                </div>
+                                <!-- Single Input Area Start -->
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form.message.errors }}
+                                        {{ form.message }}
+                                    </div>
+                                </div>
+                                <!-- Single Input Area Start -->
+                                <div class="col-12">
+                                    <button type="submit" class="btn default-button-orange">Send Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

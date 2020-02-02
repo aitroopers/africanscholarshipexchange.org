@@ -1,0 +1,53 @@
+
+                    <canvas id="myChart" height="250"></canvas>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+                    <script>
+
+                        (function () {
+                            var suggested = document.getElementById('ywcnp_suggest_price_single').value;
+                            renderChart(suggested)
+                        })();
+
+                        function renderChart(suggested) {
+
+                            var current = {{ student.current_funding }} + parseInt(suggested);
+                            var amountNeeded = {{ student.funding_goal }} - current;
+
+                            var ctx = document.getElementById("myChart");
+
+                            var myChart = new Chart(ctx, {
+                                type: 'doughnut',
+                                data: {
+                                    labels: ['Raised', 'Funding Needed'],
+                                    datasets: [{
+                                        label: "Donation",
+                                        data: [current, amountNeeded],
+                                        borderColor: "#cd3611",
+                                        fill: false,
+                                        backgroundColor: ['#800000', '#ff7077']
+                                    }]
+                                },
+                                options: {
+                                    title: {
+                                        display: true,
+                                        text: "Current Funding",
+                                        fontSize: 25
+                                    },
+                                    legend: {
+                                        position: 'top',
+                                    },
+                                },
+
+                            });
+
+                        }
+                        
+                        
+                        function addMoney(ele, money) {
+                            ele.classList.add("is-selected");
+                            document.getElementById("paypalamount").value = money;
+                            renderChart(money)
+                        }
+
+
+                    </script>

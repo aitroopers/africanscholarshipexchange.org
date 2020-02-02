@@ -1,0 +1,54 @@
+
+
+{% load static %}
+
+ <form class="variations_form details__cart--variations cart" action="https://www.paypal.com/cgi-bin/webscr" method="post"  target="_top">
+
+                            <div class="variations details__amount--array-open details__amount--variable">
+
+                                <div class="price-array__attributes">
+
+                                    <div id="pa_array-order" class="price-array wvus_pa_selector" name="attribute_pa_array-order" data-attribute_name="attribute_pa_array-order" data-show_option_none="no" style="visibility: visible;">
+                                        <input class="price-array__input attached enabled" type="radio" name="attribute_pa_array-order" value="1" id="1" checked="checked">
+                                        <label class="price-array__option" for="1" onclick="addMoney(this, 10)">$10</label>
+                                        <input class="price-array__input attached enabled" type="radio" name="attribute_pa_array-order" value="2" id="2">
+                                        <label class="price-array__option" for="2" onclick="addMoney(this, 20)">$20</label>
+                                        <input class="price-array__input attached enabled" type="radio" name="attribute_pa_array-order" value="3" id="3">
+                                        <label class="price-array__option" for="3" onclick="addMoney(this, 50)">$50</label>
+                                        <input class="price-array__input attached enabled" type="radio" name="attribute_pa_array-order" value="4" id="4">
+                                        <label class="price-array__option" for="4" onclick="addMoney(this, 100)" >$100</label>
+                                    </div>
+                                </div>
+                                <span class="array-open__conjunction"></span>
+
+                                <div data-product-info-min-amount="" data-product-info-max-amount=""></div>
+                                <div id="ywcnp_form_name_your_price" style="margin: 10px 0px;">
+                                    <p class="ywcnp_suggest_price_single">
+                                        <span class="array-open__input-group input-group">
+            <span class="ywcnp_currency input-group-addon">$</span>
+                                        <input type="text" id="ywcnp_suggest_price_single" name="ywcnp_amount" class="ywcnp_sugg_price short wc_input_price form-control" value="50" data-suggest_price="50"  onchange="renderChart()"> </span>
+
+                                        <input type="hidden" name="ywcnp_currency" value="USD">
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="details__button-messages">
+                                <div class="single_variation_wrap">
+                                    <div class="woocommerce-variation single_variation" style="">
+                                        <div class="woocommerce-variation-description">
+                                        </div>
+                                        <div class="woocommerce-variation-availability">
+                                        </div>
+                                    </div>
+                                    <div class="woocommerce-variation-add-to-cart variations_button woocommerce-variation-add-to-cart-enabled">
+                                        {% include "donate/paypal_donate.html" %}
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            {% include 'students/chart.html' %}
+
+
+                        </form>

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% include 'breadcumb_section.html' %}
+
+    <section class="blog_area section_padding_0_70">
+
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main" role="main">
+                    <article id="{{ blog.id }}" class="template-two_column_feature layout--regular post-32079 post type-post status-publish format-standard has-post-thumbnail hentry category-sponsorship-news-stories category-clean-water-news-stories country-uganda filter-special-features tags-sponsorship tags-children tags-water tags-conflict tags-girls-and-women tags-global-6k-for-water tags-spring-2018-magazine tags-magazine has-custom-video-header">
+                        <div class="container">
+                            <!-- Display standard feature image with title and tags beside-->
+                            <div class="article-inner">
+                                <div class="entry-content">
+                                    <h1><em>{{ blog.title }}</em></h1>
+                                    <img src="{% url 'home' %}{{ blog.intext_image }}">
+
+                                    {{ blog.body |safe }}
+                                </div><!-- .article-inner -->
+
+                                <aside class="entry-content-sidebar">
+                                    <div class="article-meta sidebar-meta entry-category">
+                                        <div class="label">Category :</div>
+                                        <div class="meta"><a>{{ blog.category }}</a></div>
+                                    </div>
+
+                                    <aside class="post-cta-wrap">
+                                        <div class="post-cta">
+                                            <div class="vc_row wpb_row vc_row-fluid">
+                                                <div class="wpb_column vc_column_container vc_col-sm-12">
+                                                    <div class="vc_column-inner ">
+                                                        <div class="wpb_wrapper">
+                                                            <div class="wpb_text_column wpb_content_element ">
+                                                                <div class="wpb_wrapper">
+                                                                    <h2 style="text-align: center;">Every child deserves
+                                                                        opportunity for education.</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="btn-container btn-center"><a
+                                                                    class="vc_general btn btn-primary btn-normal btn-classic btn-color-primary"
+                                                                    data-gtm="true" data-btn-region=""
+                                                                    href="{% url 'donate' %}"
+                                                                    title="">Give Now</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="facebook-plugin" style="width: 100%">
+                                            {% include 'news_events/facebook_feeds.html' %}
+                                        </div>
+                                    </aside>
+                                </aside>
+                                <div class="entry-content-footer">
+                                    <div class="article-meta footer-meta">
+                                        <div class="label">Written by:</div>
+                                        <div class="meta author-byline"><a href="" rel="author">{{ blog.author }}</a>
+                                        </div>
+                                    </div>
+                                    <div class="article-meta footer-meta">
+                                        <div class="label">Updated on:</div>
+                                        <div class="meta publish-date">{{ blog.pub_date }}</div>
+                                    </div>
+                                </div><!-- .container -->
+                            </div>
+                        </div>
+                    </article><!-- #post-## -->
+                </main><!-- #main -->
+            </div><!-- #primary -->
+
+        </div>
+
+    </section>
+{% endblock %}

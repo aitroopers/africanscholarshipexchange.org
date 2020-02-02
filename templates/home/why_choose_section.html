@@ -1,0 +1,27 @@
+{% load static %}
+
+<section class="why_choose_us_area">
+    <div class="why_choose_us_text_area">
+
+        {% for d in why_choose_us %}
+
+        <div class="single_choose_us item" style="background-image: url({% static 'images/Cross-Prisms-Church-Background.jpg' %})">
+            <div class="choose_us_icon_title">
+                <div class="choose_us_icon hexagon">
+                    <i class="ion-trophy" aria-hidden="true"></i>
+                </div>
+                <h4>{{ d.title }}</h4>
+            </div>
+            <div class="choose_us_overlay_text">
+                <div class="classy-table">
+                    <div class="classy-table-cell">
+                        <h4>{{ d.title }}</h4>
+                        <p>{{ d.content }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>

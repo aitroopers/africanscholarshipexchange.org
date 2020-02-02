@@ -1,0 +1,40 @@
+{% load static %}
+<section class="about_area section_padding_100_70" id="about">
+    <div class="container">
+        <!-- about us area is next to the creative version -->
+        <div class="about_us_area">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="about_us_text">
+                        <h3>Our History</h3>
+                        {{ ase_about | safe }}
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="about_us_one m-xs-top-50 m-md-top-50">
+                        <img src="{% static 'images/static1.squarespace.com.jpeg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- speciality area sets the top margin below the above about us div, single_speciality_icon is no longer needed b/c there are no icons -->
+
+            <div class="our_speciality_area">
+                <div class="row">
+                    {% for p in quotes %}
+                    <!-- Individual speciality areas-->
+                    <div class="col-12 col-sm-6 col-md-4">
+                        <div class="single_speciality border">
+                            <div class="single_speciality_icon">
+                            </div>
+                            <div class="single_speciality_text">
+                                <p style="font-style: italic">"{{ p }}"</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

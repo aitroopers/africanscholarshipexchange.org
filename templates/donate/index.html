@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+    <section class="welcome_area height-600 background-overlay jarallax"
+             style="background-image: url({% static 'images/donate-background.jpg' %})">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 col-sm-6"></div>
+                <div class="col-12 col-sm-6">
+                    <!-- welcome_text sets the padding for the content within this div -->
+
+                    <div class="row">
+                        <h1 style="color: #ffffff;text-align: center" class="vc_custom_heading hidden-xs">Give to Where
+                            It's Needed</h1>
+                        <div class="wpb_text_column wpb_content_element ">
+                            <h2 style="color: #ffffff" class="vc_custom_heading hidden-xs">When you give monthly you’ll make an even bigger difference!</h2>
+                        </div>
+                        <form class="giving-form form-inline" action="https://www.paypal.com/cgi-bin/webscr" method="post"  target="_top">
+                            <div class="">
+                                <div class="aligned">
+                                    <div class="input-group"><span class="giving-form__wrapper-amount"><span
+                                            class="giving-form__currency">$</span>
+    <div class=" input-group " data-field-is-valid="false"><span class="giving-form__currency">$</span>
+        <input type="number" id="widget_price_q6gwi" value="50" name="widget_price"
+               class="giving-form__form-control form-control widget-price" placeholder="" size="6"
+               aria-label="Donation amount in dollars">
+    </div><span class="widget-product giving-form__dropdown-wrapper input-group-addon"><select
+                                                id="widget_product_q6gwi"
+                                                name="widget_product"
+                                                class=" btn giving-form__btn--dropdown widget-product"
+                                                aria-label="Donation options"><option
+                                                value="1604">One Time </option><option
+                                                value="1603">Monthly </option><option
+                                                value="1602">Yearly </option></select></span></span>
+                                        <div class="input-group-btn giving-form_wrapper-cta">
+                                            <input type="hidden" name="cmd" value="_s-xclick">
+                                            <input type="hidden" name="hosted_button_id" value="AQ5X3BT849CY4">
+                                            <button type="submit" class="widget-button btn giving-form__btn--primary"
+                                                    data-product-id="1604">
+                                                Give Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="donate-message">
+                                        <!-- react-text: 18 -->
+                                        <!-- /react-text -->
+                                        <!-- react-text: 19 -->
+                                        <!-- /react-text --></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+

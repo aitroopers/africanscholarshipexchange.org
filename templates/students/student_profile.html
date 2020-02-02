@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    {% include 'breadcumb_section.html' %}
+
+    <section class="welcome_area section_padding_0_70 page-template-default page page-id-906 page-parent right-sidebar woocommerce-active wv-canvas jarallax" id="student" style="background-color: #f7f7f7">
+
+    <main id="main" class="site-main" role="main">
+        <hr>
+        <div id="product-1097" class="post-1097 product type-product status-publish has-post-thumbnail product_cat-health first instock shipping-taxable purchasable product-type-variable has-children">
+            <div class="container">
+                <div class="product-summary wvecomm_product_image_summary">
+
+                    <h1 class="product-summary__title product_title entry-title" data-product-info-title="Bed Nets" data-product-info-product-id="1097" data-product-info-item-id="D4041777" data-product-info-category="Health" data-o_content="Bed Nets">Sponsor {{ student }}</h1>
+                    <div class="product-summary__image wvecomm_product_image">
+
+                        <div class="image__wrapper">
+                            <div class="c-ribbon__wrapper">
+                                <figure>
+                                    <img width="600" height="599" src="{% url 'home' %}{{ student.profile_image }}" srcset="{% url 'home' %}{{ student.profile_image }}" sizes="(max-width: 600px) 100vw, 600px"></figure>
+                                <div class="product_ribbon">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- .wvecomm_product_image -->
+
+                    <div class="product-summary__details wvecomm_product_summary">
+
+                        <p class="price"><span class="woocommerce-Price-amount amount"><span
+                                    class="woocommerce-Price-currencySymbol">$</span>10</span>–<span class="woocommerce-Price-amount amount"><span
+                                    class="woocommerce-Price-currencySymbol">$</span>{{ student.funding_goal }}</span>
+                        </p>
+
+
+                        {% include 'students/student_form.html' %}
+
+
+
+
+                        <div class="woocommerce-product-details__short-description">
+                            <p class="details__excerpt">{{ student.about_short | safe }}</p>
+                        </div>
+
+
+
+                    </div>
+                    <!-- .wvecomm_product_summary -->
+
+                </div>
+                <!-- .wvecomm_product_image_summary -->
+            </div>
+            <!-- .container -->
+
+            <div class="wvecomm-disclaimers container">
+
+                <div class="horizontal-rule--logo">
+                    <svg class="horizontal-rule__logo" xmlns="http://www.w3.org/2000/svg" height="91.74px" width="91.74px" viewBox="0 0 91.74 91.74">
+                        <title>World Vision</title>
+                        <circle fill="#f37021" cx="45.87" cy="45.87" r="45.87"></circle>
+                        <path fill="#fff" d="M45.91 80.66c1.49-22.53 1-35.6 4.85-39.21 3.61-3.36 10-4.23 20.91-5-23.9-2.74-23.4-2.12-25.76-25.39-2.36 23.3-1.82 22.55-25.76 25.41 11 .75 17.3 1.74 20.91 5 3.73 3.61 3.36 16.68 4.85 39.21"></path>
+                    </svg>
+                    <hr class="horizontal-rule__hr--logo">
+                </div>
+
+                <div class="disclaimer product_disclaimer">
+                    <h4 class="disclaimer_title"><i>Story</i></h4> {{ student.about_long | safe}}
+
+                </div>
+            </div>
+        </div>
+        <!-- #product-1097 -->
+
+    </main>
+
+</section>
+
+{% endblock %}

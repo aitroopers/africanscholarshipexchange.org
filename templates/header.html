@@ -1,0 +1,24 @@
+{% load static %}
+<header class="header_area">
+    <div class="main_header_area animated">
+        <div class="container">
+            <nav id="navigation1" class="navigation">
+                {# float to the right#}
+                <div class="nav-header">
+                    <div class="nav-toggle"></div>
+                </div>
+                <div class="nav-menus-wrapper">
+                    <a href="{% url 'home' %}" class="align-to-left"><img src="{% static 'images/ase_logo.png' %}" style="max-width: 30%; padding: 10px"/></a>
+                    <a href="{% url 'donate' %}" class="nav-button btn-pill bg-mat-red align-to-right">Donate</a>
+                    <ul id="nav" class="nav-menu align-to-right">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'news_events' %}?page=1">News Feeds</a></li>
+                        <li><a href="{% url 'students' %}">Students</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

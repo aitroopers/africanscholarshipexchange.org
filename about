@@ -1,0 +1,106 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.shortcuts import render
+
+
+# Create your views here.
+
+
+def home(requests):
+    title = "ASE | Home"
+    website_name = "African Scholarship Exchange"
+    ase_summary = "ASE partners with African churches and organizations to identify future leaders and equip them with the education they need to succeed."
+    ase_about = [
+        'AFRICAN SCHOLARSHIP EXCHANGE (ASE) was founded in 1997, formally known as Educating Africans for Christ (EAFC).',
+        'After a mission stint in 1996, founders Val and Barry Vickery were inspired by the Malawian culture and people. Their visit here led them to their first scholarship opportunities. The initial goal of the ministry was to facilitate a few of these new Malawian friends with the training they needed to fulfill God’s call on their lives. Thus Educating Africans for Christ was born.',
+        'Fast forward to 2014 and this ministry has a rich history. African Scholarship Exchange has provided scholarships for over 800 men and women.',
+        'African Scholarship Exchange (ASE) feels blessed to have been a part of establishing a foundation in which respectful, responsible relationships are formed.'
+        ]
+
+    why_choose_us = [{'title': "Scholarship",
+                      "content": "African Scholarship Exchange is a scholarship ministry with a unique approach."},
+                     {'title': "Ministry",
+                      "content": "Our scholarship ministry for African students is rooted in the love of Christ."},
+                     {'title': "Support",
+                      "content": "African Scholarship Exchange is a scholarship ministry with a unique approach. It's not just about giving money to someone."}, ]
+
+    what_we_do = [
+        {'title': "Who We Are", "bg_img": "images/WhoWeAre2.jpg", "link": "",
+         "content": "Founded in 1997, ASE is a scholarship ministry with a unique approach. By funding educational opportunities in Africa, we have served over 800 men and women with university degrees and beyond in all fields of study."},
+        {'title': "Student Stories", "bg_img": "images/addy2.png", "link": "",
+         "content": "Our alumni have unique, exciting life stories to share with our supporters. ASE not only provides financial support. Every student develops a relationship with us through our partners in their home country."},
+        {'title': "Pray, Give, Go", "bg_img": "images/service-6.jpg", "link": "",
+         "content": "Get involved with ASE. Pray with us for the ministry and for Africa. If you want to pray for and sponsor a specific students, contact us. Share our website. Connect with us on social media. Ask us about ways to donate."},
+    ]
+    return render(requests, "home/index.html", locals())
+
+
+def about(requests):
+    website_name = "African Scholarship Exchange"
+    title = "ASE | About Us"
+    ase_summary = "ASE partners with African churches and organizations to identify future leaders and equip them with the education they need to succeed."
+    ase_about = [
+        'AFRICAN SCHOLARSHIP EXCHANGE (ASE) was founded in 1997, formally known as Educating Africans for Christ (EAFC).',
+        'After a mission stint in 1996, founders Val and Barry Vickery were inspired by the Malawian culture and people. Their visit here led them to their first scholarship opportunities. The initial goal of the ministry was to facilitate a few of these new Malawian friends with the training they needed to fulfill God’s call on their lives. Thus Educating Africans for Christ was born.',
+        'Fast forward to 2014 and this ministry has a rich history. African Scholarship Exchange has provided scholarships for over 800 men and women.',
+        'African Scholarship Exchange (ASE) feels blessed to have been a part of establishing a foundation in which respectful, responsible relationships are formed.'
+    ]
+
+    quotes = [
+        "We believe the Bible to be the inspired, the only infallible, authoritative Word of God.",
+        "We believe that there is one God, eternally existent in three persons; Father, Son, and Holy Spirit.",
+        "We believe in the resurrection of both the saved and the lost; they that are saved unto the resurrection of life, and they that are lost unto the resurrection of damnation.",
+        "We believe that for the salvation of lost and sinful man regeneration by the Holy Spirit is absolutely essential.",
+        "We believe in the present ministry of the Holy Spirit by whose indwelling the Christian is enabled to live a godly life.",
+        "We believe in the spiritual unity of believers in Christ."
+    ]
+
+    team = [
+        {"name": "Suny Khan", "img": "images/tes-4.jpg", "title": "Lead Designer",
+         "about": "Suny Khan is lead designer of Designing World. He is hard working & honest person. He love design."},
+        {"name": "Ajoy Das", "img": "images/tes-3.jpg", "title": "CEO",
+         "about": "She is hard working & honest person. He love design. She is lead designer of Designing World."},
+        {"name": "John Doe", "img": "images/tes-2.jpg", "title": "CFO", "about": "He is lead CFO of Designing World. He loves God. He is hard working & honest person."}
+    ]
+    page = {"title":" About Us", "name":"About"}
+
+    return render(requests, "about/index.html", locals())
+
+def students(requests):
+    website_name = "African Scholarship Exchange"
+    title = "ASE | Students"
+    ase_summary = "ASE partners with African churches and organizations to identify future leaders and equip them with the education they need to succeed."
+    page = {"title": " Students", "name": "Students"}
+    stds = [{'name':"Vianney Bitharo", "img":"images/s1.png", "about":"My school's graduation [will be in] December of this year... Now I am writing my Master's thesis...I am still continuing my teaching ministry at my local church in Kanyosha, Bujumbura. But once in a while I am helping a pastor who is involved in planting a church some 20 km outside of town.", "year":"2014", "loc":" Burundi"},
+            {'name': "YVETTE MUKARUKUNDO", "img": "images/s2.png", "year": "2018", "loc": " Rwanda", "about": "Yvette is a nurse who works with preemies. During our 2010 trip to Rwanda, Yvette showed us her hospital and introduced us to her husband and children in her home. She smiles warmly, showing you the tenderness in which she caresses the tiniest of human beings in the hospital where she works. She cares for the preemie babies and teaches their mothers how to tend to their needs. Through this, she is touching the lives in a way that words alone cannot convey. "},
+            {'name': "PHIDEL BARAZA", "img": "images/s3.png", "year": "2006", "loc": " Kenya", "about": "I am a graduate of NEGST (now-Africa International University). I graduated in the year 2006. I am writing to appreciate EAFC for partnering with me to see me through my education...Today i serve with Christ Is The Answer Ministries as a children's pastor reaching out to over 1,500 children per Sunday..."},]
+
+    return render(requests, "students/index.html", locals())
+
+
+def contact(requests):
+    website_name = "African Scholarship Exchange"
+    title = "ASE | Contact Us"
+    ase_summary = "ASE partners with African churches and organizations to identify future leaders and equip them with the education they need to succeed."
+    page = {"title": " Contact Us", "name": "Contact"}
+    return render(requests, "contact/index.html",locals())
+
+
+def news_events(requests):
+    content = """
+    A non-profit organization (NPO), also known as a non-business entity[1] or non-profit institution,[2] is dedicated to furthering a particular social cause or advocating for a shared point of view. In economic terms, it is an organization that uses its surplus of the revenues to further achieve its ultimate objective, rather than distributing its income to the organization's shareholders, leaders, or members. Non-profits are tax exempt or charitable, meaning they do not pay income tax on the money that they receive for their organization. They can operate in religious, scientific, research, or educational settings.
+
+The key aspects of nonprofits is accountability, trustworthiness, honesty, and openness to every person who has invested time, money, and faith into the organization. Nonprofit organizations are accountable to the donors, funders, volunteers, program recipients, and the public community. Public confidence is a factor in the amount of money that a nonprofit organization is able to raise. The more nonprofits focus on their mission, the more public confidence they will have, and has a result, more money for the organization.[1] The activities a nonprofit is partaking in can help build the public’s confidence in nonprofits, as well as how ethical the standards and practices are.
+    """
+    website_name = "African Scholarship Exchange"
+    title = "ASE | News Events"
+    ase_summary = "ASE partners with African churches and organizations to identify future leaders and equip them with the education they need to succeed."
+    page = {"title": " News Events", "name": "News Events"}
+    events = [{"img":"images/blog-8.jpg", "title":"How to build Wakanda: Lessons for African leaders from 'Black Panther'", "name":"Joe Dean", "year":"2018", "content":content},
+
+              {"img": "images/blog-9.jpg", "title": "Elephant declines imperil Africa's forests", "name": "Duke", "year": "2016", "content": content},
+              {"img": "images/blog-10.jpg", "title": "We spent nine years tracking South Africa's white sharks. What we learnt", "name": "Allison Kock", "year": "2015", "content": content},
+
+              ]
+    return render(requests, "news_events/index.html", locals())

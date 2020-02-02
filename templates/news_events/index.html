@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    {% include 'breadcumb_section.html' %}
+
+    <section class="blog_area section_padding_0_70" id="blog">
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area container">
+                <main id="main" class="site-main" role="main">
+                    <div class="hub-story-list">
+                        <div class="story-summaries-wrap">
+                            <div class="story-summaries story-summaries--grid">
+
+                                {% for e in blogs %}
+                                <a href="{% url 'news_events' %}/?blog={{ e.id }}"
+                                   class="post-summary post-summary--link type-post status-publish format-standard has-post-thumbnail hentry category-sponsorship-news-stories category-clean-water-news-stories country-uganda filter-special-features tags-sponsorship tags-children tags-water tags-conflict tags-girls-and-women tags-global-6k-for-water tags-spring-2018-magazine tags-magazine">
+                                    <article>
+                                        <div class="summary-image">
+                                            <div class="wvus-summary-image">
+                                                <img class="img-responsive wp-post-image"
+                                                     src="{% url 'home' %}{{ e.thumbnail }}"
+                                                     alt="">
+                                            </div>
+                                        </div>
+                                        <div class="entry-summary">
+                                            <span class="entry-section">{{ e.category.title }}</span>
+                                            <h2 class="entry-title gamma">
+                                                {{ e.title }}</h2>
+
+                                            <div class="entry-meta centi">
+                                                <ul>
+                                                    <li><span class="entry-category">{{ e.author }}</span></li>
+                                                    <li><span class="entry-country">{{ e.pub_date }}</span></li>
+                                                </ul>
+                                            </div><!-- .entry-meta -->
+                                        </div><!-- .entry-summary -->
+                                    </article>
+                                </a><!-- #post-## -->
+                                {% endfor %}
+                            </div>
+
+                        </div>
+
+                    </div>
+                </main><!-- #main -->
+
+                <div>
+                    <div class="alm-btn-wrap alm-load-more-btn">
+                        <h3>Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}</h3>
+                    </div>
+                {% if blogs.has_previous %}
+                            <ul class="pager">
+                                <li class="previous"><a href="?page=1">&laquo; first</a></li>
+                                <li class="next"><a href="?page={{ blogs.previous_page_number }}">previous</a></li>
+                            </ul>
+                    {% endif %}
+                    {% if blogs.has_next %}
+                            <ul class="pager">
+                                <li class="previous"><a href="?page={{ blogs.next_page_number }}">next</a></li>
+                                <li class="next"><a href="?page={{ blogs.paginator.num_pages }}">last &raquo;</a></li>
+                            </ul>
+                    {% endif %}
+                </div>
+            <br>
+
+
+            </div><!-- #primary -->
+
+        </div>
+    </section>
+
+    <section class="section_padding_0_70 page-template-default page page-id-906 page-parent right-sidebar woocommerce-active wv-canvas jarallax">
+    <div style="margin:auto">
+                {% include 'news_events/facebook_feeds.html' %}
+            </div>
+
+    </section>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% load static %}
+
+
+<section class="our_advisor_area clearfix section_padding_100_70" id="advisor">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-12">
+
+                <div class="section_heading">
+                    <p>Our Quality Members</p>
+                    <h3>ASE Team</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="classy-team-member team-1">
+            <div class="row">
+                <!-- Single Team Member -->
+                {% for t in team %}
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <div class="single-team-member p-30 bg-gray m-bottom-30">
+                            <div class="team-thumb-meta m-bottom-15">
+                                <img src="{{ t.profile_image }}" alt="">
+                                <p class="d-flex align-items-center">{{ t.about }}</p>
+                            </div>
+                            <div class="team-name-social-info d-flex align-items-center">
+                                <div class="team-name w-50">
+                                    <h5>{{ t.first_name }} {{ t.last_name }}</h5>
+                                    <p>{{ t.position}}</p>
+                                </div>
+                                <div class="team-social-info w-50">
+                                    <a href="#" class="csi csi-circle csi-sm csi-twitter-active"><i
+                                            class="ion-social-twitter-outline" aria-hidden="true"></i></a>
+                                    <a href="#" class="csi csi-circle csi-sm csi-facebook-active"><i
+                                            class="ion-social-facebook-outline" aria-hidden="true"></i></a>
+                                    <a href="#" class="csi csi-circle csi-sm csi-google-plus-active"><i
+                                            class="ion-social-googleplus-outline" aria-hidden="true"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </div>
+</section>
+

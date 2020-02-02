@@ -1,0 +1,78 @@
+{% load static %}
+
+<footer class="footer_area">
+       <!-- top header area -->
+    <div class="foo_top_header_one section_padding_100_70">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_foo_part">
+                        <h5>About Us</h5>
+                        <p> {{ ase_summary }}</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_foo_part m-top-15">
+                        <h5>Social Links</h5>
+                        <!-- social links has settings for the list items  -->
+                        <ul class="foo_social_links">
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> Pinterest</a></li>
+                            <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_foo_part m-top-15">
+                        <h5>Important Links</h5>
+                        <!-- imp links has settings for the list items  -->
+                        <ul class="imp_links">
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Terms & Conditions</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Help & Support</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy Policy</a></li>
+                            <li><a href="/admin/"><i class="fa fa-angle-right" aria-hidden="true"></i>Admin</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="single_foo_part">
+                        <h5>Quick Contact</h5>
+                        <div class="foo_single_contact_info">
+                            <h5>Phone:</h5>
+                            <p>+1 601.206.5667</p>
+                        </div>
+                        <div class="foo_single_contact_info">
+                            <h5>Email:</h5>
+                            <p>admin@africanscholarship.org</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-8" style="margin-top: 15%">
+                        <img src="{% static 'images/ase_logo.png' %}"/>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="foo_bottom_header_one section_padding_50 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p>© All Rights Reserved by <a href="#">{{ website_name }}</a> </p>
+                </div>
+                <div class="col-12">
+                    <img style="height: 35%" src="{% static 'images/ECFA-Seal.png' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
